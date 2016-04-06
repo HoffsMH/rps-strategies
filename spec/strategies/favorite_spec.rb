@@ -25,7 +25,7 @@ describe Favorite do
     end
     context "when given a game with history" do
       context "and opponent history favors 'r'" do
-        it "recomends 'p'" do
+        it "recommends 'p'" do
           game = Game.new
           game.play({computer: "p", opponent: "r", test_env: true})
           game.play({computer: "p", opponent: "p", test_env: true})
@@ -40,7 +40,7 @@ describe Favorite do
         end
       end
       context "and opponent history favors 'p'" do
-        it "recomends 's'" do
+        it "recommends 's'" do
           game = Game.new
           game.play({computer: "p", opponent: "p", test_env: true})
           game.play({computer: "p", opponent: "p", test_env: true})
@@ -55,7 +55,7 @@ describe Favorite do
         end
       end
       context "and opponent history favors 's'" do
-        it "recomends 'r'" do
+        it "recommends 'r'" do
           game = Game.new
           game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "p", opponent: "p", test_env: true})
@@ -70,7 +70,7 @@ describe Favorite do
         end
       end
       context "and opponent history favor's 2 moves equally" do
-        it "recomends the counter either of the 2 moves randomly" do
+        it "recommends the counter either of the 2 moves randomly" do
           game = Game.new
           game.play({computer: "p", opponent: "r", test_env: true})
           game.play({computer: "p", opponent: "r", test_env: true})
@@ -88,7 +88,7 @@ describe Favorite do
         end
       end
       context "and opponent history doesn't favor an particular move" do
-        it "reccomends the counter to a random move" do
+        it "recommends the counter to a random move" do
           game = Game.new
           game.play({computer: "p", opponent: "p", test_env: true})
           game.play({computer: "p", opponent: "p", test_env: true})
