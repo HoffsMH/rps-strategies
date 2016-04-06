@@ -26,3 +26,10 @@
 
 * in Favorite.get_max not using max_by because the values it returns when there is a tie between two moves don't make sense for our game
 * when there is a 2 way tie or 3 way tie we should choose randomly
+#### iocaine powder part 1
+* [http://ofb.net/~egnor/iocaine.html](iocaine powder) by Dan Egnor
+* I don't plan on being able to implement the full version over the next 12 hours but I do plan to work iteratively and have something somewhat resembling this strategy by tomorrow
+
+* The first thing that I'm learning as Im reading over this is that its possible for a prediction and a strategy based on that prediction to be 2 totally separate things
+  * so before I get to work on the first iteration of ```iocaine-powder``` Im going to have to come up with atleast one separate prediction algorithm.
+  * for now Im just going to co-opt my ```adaptive-last`` algorithm, Later on I might try the "history matching" algorithm detailed on the website.
