@@ -17,3 +17,7 @@ The instructions on how to operate are below.
 #### Extra Strategies:
 * ```adaptive-last ```
   * This is somewhate similar to the "last" strategy. See details here [http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/](http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/)
+* ```iocaine-powder```
+  * This is a complicated strategy See details here
+  * [http://ofb.net/~egnor/iocaine.html](http://ofb.net/~egnor/iocaine.html) By Dan Egnor
+  *  I don't plan to make a full implementation of it, for an explanation and to see how far I get please refer to the notes.

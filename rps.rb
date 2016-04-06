@@ -13,9 +13,10 @@ end
 puts "You are playing against strategy '#{strategy.name}'."
 
 choice = ""
+round = 0
 while choice != "q" do
   computer_choice = strategy.evaluate(game)
-
+  puts "Round: #{round += 1}"
   puts "Type 'r', 'p', 's' or 'q' to quit."
   print ">"
 

@@ -1,3 +1,4 @@
+require 'colorize'
 class Game
   attr_accessor :history, :score
 
@@ -29,19 +30,19 @@ class Game
   def console_output(turn, winner)
     # only show messages to stdout when we are not in test mode
     # to make our test output easier to read
-    return nil if turn[:test_env] 
+    return nil if turn[:test_env]
 
     print "I chose '#{turn[:computer]}'. "
     if winner == "computer"
-      print "I Win!\n"
+      print "I Win!\n".colorize(:red)
     elsif winner == "opponent"
-      print "You Win!\n"
+      print "You Win!\n".colorize(:green)
     else
-      print "It's a Tie!\n"
+      print "It's a Tie!\n".colorize(:yellow)
     end
-    puts "You won #{@score[:opponent]} times."
-    puts "I won #{@score[:computer]} times."
-    puts "We tied #{@score[:draw]} times."
+    puts "You won " << "#{@score[:opponent]}".colorize(:green) << " times."
+    puts "I won " << " #{@score[:computer]}".colorize(:red) << " times."
+    puts "We tied " << " #{@score[:draw]}".colorize(:yellow) << " times."
     puts
   end
 
