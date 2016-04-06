@@ -22,3 +22,7 @@
   * if we see arbitrarily large games occur we could have our strategy optionally accept some sort of store  along with the game object like this
   * ``` strategy.evaluate(game: game, store: store)```
   * the downside is that we would need to add some conditional logic to ```rps.rb``` and ideally we want that file to be as agnostic about strategies as possible
+
+
+* in Favorite.get_max not using max_by because the values it returns when there is a tie between two moves don't make sense for our game
+* when there is a 2 way tie or 3 way tie we should choose randomly
