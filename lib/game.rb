@@ -29,7 +29,7 @@ class Game
   def console_output(turn, winner)
     # only show messages to stdout when we are not in test mode
     # to make our test output easier to read
-    turn[:test_env] ? return : nil
+    return nil if turn[:test_env] 
 
     print "I chose '#{turn[:computer]}'. "
     if winner == "computer"
@@ -47,7 +47,7 @@ class Game
 
   def play(turn)
     # if the turn is invalid we return nil
-    valid_turn(turn) ? nil : return
+    return nil if !valid_turn(turn)
     winner = make_ruling(turn)
     console_output(turn, winner)
 

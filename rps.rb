@@ -5,17 +5,17 @@ game = Game.new
 strategy_choice = ARGV[0]
 
 if Strategies[strategy_choice]
-  strategy = Strategies[strategy_choice].new
+  strategy = Strategies[strategy_choice]
 else
-  strategy = Strategies['default'].new
+  strategy = Strategies['default']
 end
 
 puts "You are playing against strategy '#{strategy.name}'."
 
 choice = ""
 while choice != "q" do
-  # computer_choice = strategy.evaluate(game)
-  computer_choice = "r"
+  computer_choice = strategy.evaluate(game)
+
   puts "Type 'r', 'p', 's' or 'q' to quit."
   print ">"
 

@@ -4,11 +4,11 @@ The instructions on how to operate are below.
  I've also included a notes.md file inside it is going to be my thought process as I work through each problem. This isn't meant to be formal documentation. Its just a sort of flow of consciousness so the reader can get an idea of what I am thinking.
 
 #### Installation:
-* run ``` bundle ```
-* run ```ruby rps.rb <strategy> ```
+* ``` bundle ```
+* ```ruby rps.rb <strategy> ``` (if strategy isn't found or not specified will use default)
 
 #### Testing:
-* run ``` bundle exec rspec ```
+* ``` bundle exec rspec ```
 
 #### Available strategies:
 * ```last ```
