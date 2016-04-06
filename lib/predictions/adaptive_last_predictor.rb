@@ -1,4 +1,4 @@
-module AdaptiveLastPre
+module AdaptiveLastPredictor
   def self.predict
   end
 end
