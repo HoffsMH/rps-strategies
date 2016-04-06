@@ -41,8 +41,34 @@
 
 #### iocaine powder part 1
 * [http://ofb.net/~egnor/iocaine.html](iocaine powder) by Dan Egnor
+* I am aware that the source is available but I am avoiding reading it and trying to figure out how to write this from his description
+  * not that the source would even help me, I don't know the first thing about C!
 * I don't plan on being able to implement the full version over the next 12 hours but I do plan to work iteratively and have something somewhat resembling this strategy by tomorrow
 
-* The first thing that I'm learning as Im reading over this is that its possible for a prediction and a strategy based on that prediction to be 2 totally separate things
+* The first cool thing that I'm learning as Im reading over this is that its possible for a prediction and a strategy based on that prediction to be 2 totally separate things
   * so before I get to work on the first iteration of ```iocaine-powder``` Im going to have to come up with atleast one separate prediction algorithm.
   * for now Im just going to co-opt my ```adaptive-last`` algorithm, Later on I might try the "history matching" algorithm detailed on the website.
+
+#### iocaine powder part 2
+* Ok I now have a working version of my adaptive-last-predictor time to start working on iocaine itself
+
+* To start talking myself through this...
+  * I have a rough idea of how to use a prediction algorithm on a complete game history and then use a meta strategy on that prediction to form a final suggestion
+
+  * The hard part seems to be figuring out which (prediction algorithm)-(meta strategy) combination to use.
+
+  * From my understanding: I have to use each (prediction)-(strategy) combination on each unique point in game history and determine whether using that combination would result in a win(+1), loss(-1), or draw(0).
+
+  * the (prediction)-(strategy) combination with the highest score after iterating through every point in history is the winner and is what is suggested for the next move
+
+##### so
+
+  * I need to break up each round in history into a sub-history, going from that specific round to the very first round, and use each of those predictors on each of those sub histories
+
+  * So say I have round 1-4 in history with 4 being the latest round and 1 being the first round
+    * The list of histories I want to submit to all of my predictors are:
+      ```
+      round 1-3
+      round 1-2
+      round 1
+      ```
