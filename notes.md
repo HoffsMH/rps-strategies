@@ -61,7 +61,9 @@
 
   * the (prediction)-(strategy) combination with the highest score after iterating through every point in history is the winner and is what is suggested for the next move
 
-##### so
+#### I can now get the top scoring combination from a score hash!
+
+##### So
 
   * I need to break up each round in history into a sub-history, going from that specific round to the very first round, and use each of those predictors on each of those sub histories
 
