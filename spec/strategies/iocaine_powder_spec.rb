@@ -96,4 +96,39 @@ describe IocainePowder do
       expect(IocainePowder.initial_combination_scores).to eq(expected_hash)
     end
   end
+  describe ".get_top_combinations" do
+    context "when there is no tie" do
+      let!(:scores) do
+        {
+          "adaptive-last" => {
+            "P.0" => 2,
+            "P.1" => 5,
+            "P.2" => 1,
+          }
+        }
+      end
+      it "returns the top combination" do
+        result = IocainePowder.get_top_combinations(scores)
+
+        expect(result).to eq([{predictor: "adaptive-last", meta_strategy: "P.1"}])
+      end
+    end
+    context "when there is a tie" do
+      let!(:scores) do
+        {
+          "adaptive-last" => {
+            "P.0" => 3,
+            "P.1" => 3,
+            "P.2" => 1,
+          }
+        }
+      end
+      it "returns the top combination" do
+        result = IocainePowder.get_top_combinations(scores)
+
+        expect(result).to eq([{predictor: "adaptive-last", meta_strategy: "P.0"},
+                              {predictor: "adaptive-last", meta_strategy: "P.1"}])
+      end
+    end
+  end
 end

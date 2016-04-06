@@ -65,6 +65,23 @@ module IocainePowder
     scores
   end
 
+  def self.get_top_combinations(score)
+    current_top = 0
+    top_scores = []
+    score.keys.each do |predictor_key|
+      score[predictor_key].keys.each do |strategy_key|
+        current_score = score[predictor_key][strategy_key]
+        if current_score == current_top
+          top_scores.push({predictor: predictor_key, meta_strategy: strategy_key})
+        elsif current_score > current_top
+          current_top = current_score
+          top_scores = [{predictor: predictor_key, meta_strategy: strategy_key}]
+        end
+      end
+    end
+    top_scores
+  end
+
   def self.evaluate(game)
     return nil if !game || !game.history
     return "p" if game.history.empty?
