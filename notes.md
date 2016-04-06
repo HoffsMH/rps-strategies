@@ -5,6 +5,7 @@
 
 * I think, for now, it makes sense to keep as much information in the game object itself as possible and have the strategies just ask the game questions. It seems like that will be easier to write test for as we can make up as many fake games as we like and make sure that our strategies are choosing the correct moves.
   * stateful game -  stateless strategy
+  
 
 #### Ok now we have our working game object.
 * its time to write our first strategy
