@@ -27,12 +27,6 @@ describe AdaptiveLast do
       it "returns random" do
         game = Game.new
         game.play({computer: "p", opponent: "p", test_env: true})
-        game.play({computer: "p", opponent: "p", test_env: true})
-        game.play({computer: "p", opponent: "s", test_env: true})
-        game.play({computer: "p", opponent: "r", test_env: true})
-        game.play({computer: "p", opponent: "s", test_env: true})
-        game.play({computer: "p", opponent: "p", test_env: true})
-
 
         result = AdaptiveLast.evaluate(game)
 
@@ -43,13 +37,7 @@ describe AdaptiveLast do
       context "and the opponents last move was 'r'" do
         it "recommends  'r'" do
           game = Game.new
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "p", opponent: "r", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
-          game.play({computer: "p", opponent: "r", test_env: true})
-
 
           result = AdaptiveLast.evaluate(game)
 
@@ -59,13 +47,7 @@ describe AdaptiveLast do
       context "and the opponents last move was 'p'" do
         it "recommends  'p'" do
           game = Game.new
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
-          game.play({computer: "p", opponent: "r", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "s", opponent: "p", test_env: true})
-
 
           result = AdaptiveLast.evaluate(game)
 
@@ -75,13 +57,7 @@ describe AdaptiveLast do
       context "and the opponents last move was 's'" do
         it "recommends  's'" do
           game = Game.new
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
-          game.play({computer: "p", opponent: "r", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "r", opponent: "s", test_env: true})
-
 
           result = AdaptiveLast.evaluate(game)
 
@@ -93,11 +69,6 @@ describe AdaptiveLast do
       context "and the opponents last move was 'r'" do
         it "recommends  'p'" do
           game = Game.new
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
-          game.play({computer: "p", opponent: "r", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "s", opponent: "r", test_env: true})
 
 
@@ -109,11 +80,6 @@ describe AdaptiveLast do
       context "and the opponents last move was 'p'" do
         it "recommends  's'" do
           game = Game.new
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
-          game.play({computer: "p", opponent: "r", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "r", opponent: "p", test_env: true})
 
 
@@ -125,11 +91,6 @@ describe AdaptiveLast do
       context "and the opponents last move was 's'" do
         it "recommends  'r'" do
           game = Game.new
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "p", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
-          game.play({computer: "p", opponent: "r", test_env: true})
-          game.play({computer: "p", opponent: "s", test_env: true})
           game.play({computer: "p", opponent: "s", test_env: true})
 
 
