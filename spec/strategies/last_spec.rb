@@ -1,8 +1,8 @@
 require "rspec"
 require "pry"
 
-require_relative "../lib/game"
-require_relative "../lib/strategies/last"
+require_relative "../../lib/game"
+require_relative "../../lib/strategies/last"
 
 
 describe Last do
