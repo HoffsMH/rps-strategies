@@ -14,7 +14,8 @@ puts "You are playing against strategy '#{strategy.name}'."
 
 choice = ""
 while choice != "q" do
-  computer_choice = strategy.evaluate(game)
+  # computer_choice = strategy.evaluate(game)
+  computer_choice = "r"
   puts "Type 'r', 'p', 's' or 'q' to quit."
   print ">"
 
