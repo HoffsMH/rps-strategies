@@ -61,9 +61,9 @@
 
   * the (prediction)-(strategy) combination with the highest score after iterating through every point in history is the winner and is what is suggested for the next move
 
-#### I can now get the top scoring combination from a score hash!
+#### I can now get the top scoring combination from a score hash and generate an initial score hash!
 
-##### So
+##### So now its time to populate that score hash
 
   * I need to break up each round in history into a sub-history, going from that specific round to the very first round, and use each of those predictors on each of those sub histories
 
@@ -74,3 +74,4 @@
       round 1-2
       round 1
       ```
+  * the nested loops are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies
