@@ -128,5 +128,31 @@ describe Game do
         expect(game.score).to eq(old_score)
       end
     end
+
+    context "a player choice is missing" do
+      it "returns nil" do
+        game = Game.new
+
+        result = game.play({opponent: "q", test_env: true})
+
+        expect(result).to be_nil
+      end
+      it "doesn't record anything to history" do
+        game = Game.new
+
+        result = game.play({computer: "r", test_env: true})
+
+        expect(game.history.count).to eq(0)
+      end
+
+      it "doesn't update the score" do
+        game = Game.new
+        old_score = game.score
+
+        result = game.play({ opponent: "q", test_env: true})
+
+        expect(game.score).to eq(old_score)
+      end
+    end
   end
 end
