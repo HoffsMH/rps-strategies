@@ -7,6 +7,22 @@ require_relative "../../lib/strategies/adaptive_last"
 
 describe AdaptiveLast do
   describe "evaluate" do
+    context "when not given a game" do
+      it "returns nil" do
+        result = Favorite.evaluate(nil)
+        expect(result).to be_nil
+      end
+    end
+    context "when given a game with no history" do
+      # human opponents tend to choose rock as their opening move
+      # http://www.livescience.com/15574-win-rock-paper-scissors.html
+      it "returns paper" do
+        game = Game.new
+        result = Favorite.evaluate(game)
+
+        expect(result).to eq("p")
+      end
+    end
     context "when the last move was a draw" do
       it "returns random" do
         game = Game.new

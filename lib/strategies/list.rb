@@ -5,6 +5,6 @@ require_relative "./adaptive_last"
 Strategies = {
     'default' => Favorite,
     'last' => Last,
-    'adaptive-last' => AdaptiveLast
+    'adaptive-last' => AdaptiveLast,
     'favorite' => Favorite
 }

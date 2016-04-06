@@ -11,8 +11,15 @@ module AdaptiveLast
     return nil if !game || !game.history
     return "p" if game.history.empty?
 
-    if game.history.last[:winner] ==  "draw"
+    last_score = game.history.last[:winner]
+
+    case last_score
+    when "draw"
       return suggestions.keys.sample
+    when "opponent"
+      return suggestions[game.history.last[:opponent]]
+    when "computer"
+      return game.history.last[:opponent]
     end
   end
 
