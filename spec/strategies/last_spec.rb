@@ -7,6 +7,12 @@ require_relative "../../lib/strategies/last"
 
 describe Last do
   describe ".evaluate" do
+    context "when not given a game" do
+      it "returns nil" do
+        result = Last.evaluate(nil)
+        expect(result).to be_nil
+      end
+    end
     context "when given a game with no history" do
       # human opponents tend to choose rock as their opening move
       # http://www.livescience.com/15574-win-rock-paper-scissors.html
