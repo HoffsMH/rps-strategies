@@ -21,6 +21,8 @@ describe Last do
       context "and the opponents last move was 'r'" do
         it "returns p" do
           game = Game.new
+          game.play({computer: "p", opponent: "p", test_env: true})
+          game.play({computer: "s", opponent: "s", test_env: true})
           game.play({computer: "r", opponent: "r", test_env: true})
 
           result = Last.evaluate(game)
@@ -31,6 +33,8 @@ describe Last do
       context "and the opponents last move was 'p'" do
         it "returns s" do
           game = Game.new
+          game.play({computer: "s", opponent: "s", test_env: true})
+          game.play({computer: "r", opponent: "r", test_env: true})
           game.play({computer: "p", opponent: "p", test_env: true})
 
           result = Last.evaluate(game)
@@ -41,6 +45,8 @@ describe Last do
       context "and the opponents last move was 's'" do
         it "returns r" do
           game = Game.new
+          game.play({computer: "r", opponent: "r", test_env: true})
+          game.play({computer: "p", opponent: "p", test_env: true})
           game.play({computer: "s", opponent: "s", test_env: true})
 
           result = Last.evaluate(game)
