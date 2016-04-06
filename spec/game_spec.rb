@@ -118,6 +118,15 @@ describe Game do
 
         expect(game.history.count).to eq(0)
       end
+
+      it "doesn't update the score" do
+        game = Game.new
+        old_score = game.score
+
+        result = game.play({computer: "r", opponent: "q", test_env: true})
+
+        expect(game.score).to eq(old_score)
+      end
     end
   end
 end
