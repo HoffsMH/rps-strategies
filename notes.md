@@ -26,3 +26,14 @@
 
 * in Favorite.get_max not using max_by because the values it returns when there is a tie between two moves don't make sense for our game
 * when there is a 2 way tie or 3 way tie we should choose randomly
+
+#### Moving on to adaptive-last
+* this strategy is detailed here [http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/](http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/)
+
+*  basically if the player won last round with rock the player is more likely to play rock again so we counter that with paper
+* if the player lost last round with rock he is likely to counter what we last used (paper) so the player will pick scissors, so we will pick rock.
+
+* if the opponent loses play what the opponent just played
+* if the opponent wins play what counters what the opponent just played.
+
+* as for what happens after draws I think for now we will just go with random, its possible I will have time for history matching later on
