@@ -25,8 +25,8 @@
   * the downside is that we would need to add some conditional logic to ```rps.rb``` and ideally we want that file to be as agnostic about strategies as possible
 
 
-* in Favorite.get_max not using max_by because the values it returns when there is a tie between two moves don't make sense for our game
-* when there is a 2 way tie or 3 way tie we should choose randomly
+* in ```Favorite.get_max`` not using ```max_by``` enumerator because the values it returns when there is a tie between two moves don't make sense for our game
+* when there is a 2 way tie or 3 way tie we should choose randomly between those that tied for top occurrences
 
 #### Moving on to adaptive-last
 * this strategy is detailed here [http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/](http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/)
@@ -64,9 +64,41 @@
 
 #### I can now get the top scoring combination from a score hash and generate an initial score hash!
 
+my data structure for scoring looks like this
+
+```
+  scores = {
+    prediction-algorithm1: {
+      meta-strategy1: -2,
+      meta-strategy2: 0,
+      meta-strategy3: 1,
+    },
+    prediction-algorithm2: {
+      meta-strategy1: 3,
+      meta-strategy2: 1,
+      meta-strategy3: 2,
+    },
+    prediction-algorithm3: {
+      meta-strategy1: 0,
+      meta-strategy2: -1,
+      meta-strategy3: 4,
+    }
+  }
+```
+
+* Its populated by trying each combination of prediction algorithm and meta-strategy on each point in the game's history
+
+* if the combination would have have countered the next move we give it a  (+1)
+
+* if the combination would have have lost to the next move we give it a  (-1)
+
+* if the combination would have have drawn with the next move we give it a (0)
+
+* in this example the highest ranking combination would be ```prediction-algorithm3``` and ```meta-strategy3``` with a value of ```4```
+
 ##### So now its time to populate that score hash
 
-  * I need to break up each round in history into a sub-history, going from that specific round to the very first round, and use each of those predictors on each of those sub histories
+  * I need to break up each round in history into a sub-history, going from that specific round to the very first round, and use each of those (predictor)-(meta-strategy) combination on each of those sub histories
 
   * So say I have round 1-4 in history with 4 being the latest round and 1 being the first round
     * The list of histories I want to submit to all of my predictors are:
@@ -75,9 +107,10 @@
       round 1-2
       round 1
       ```
-  * the nested loops are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies
+  * the nested loops are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies.
+
   * so we are now generating a score hash, picking the top scoring combination from that hash and applying it to the current total game history to make a suggestion for the computer
-  *
+
   * annnnnd...
 
 ### WE HAVE A WORKING IOCAINE-POWDER!
@@ -85,15 +118,18 @@
 * I test drove it myself and its already pretty hard to go positive W/L against it. So COOL!
 *  I would have never thought this up in a million years, this Dan Egnor dude is a genius.
 
-* I don't think ill get to the  ```P'.0: second-guess the opponent``` and ```P'.1, P'.2: variations on a theme``` strategies. Im more interested in adding more prediction algorithms
+* I don't think I'll get to the  ```P'.0: second-guess the opponent``` and ```P'.1, P'.2: variations on a theme``` strategies. Im more interested in adding more prediction algorithms
 
 * Once I add more predictors it will be even more deadly so thats the next task
 
 #### Favorite predictor!
 
-* Currently alternating between only 2 moves is pretty strong against our iocaine so thats why I want to implement favorite first I think it will be an easy win
+* Currently alternating between only 2 moves is pretty strong against our ```iocaine-powder``` strategy so thats why I want to implement favorite next
 
-#### I have added more predictors
+* I think it will be an easy win in terms of W/L ratios
+
+#### Favorite and HistoryMatcher added
+
 * Now that I have a working History matcher its even harder to beat.
 * I have tests for my history matcher but after staring at the algorithm for a while I'm still having a hard time figuring out how to refactor it without losing any readability
 
