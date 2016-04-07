@@ -15,6 +15,8 @@ The instructions on how to operate are below.
 * ```favorite ```
 
 #### Extra Strategies:
+* ```random```
+  * Exactly what you would expect.
 * ```adaptive-last ```
   * This is somewhate similar to the "last" strategy. See details here [http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/](http://arstechnica.com/science/2014/05/win-at-rock-paper-scissors-by-knowing-thy-opponent/)
 * ```iocaine-powder```
