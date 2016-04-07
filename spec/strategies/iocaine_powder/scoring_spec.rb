@@ -13,6 +13,11 @@ describe Scoring do
           "P.0" => 0,
           "P.1" => 0,
           "P.2" => 0,
+        },
+        "favorite" => {
+          "P.0"=>0,
+          "P.1"=>0,
+          "P.2"=>0
         }
       }
       result = Scoring.get_initial_scores(
@@ -95,6 +100,11 @@ describe Scoring do
             "P.0" => 2,
             "P.1" => 5,
             "P.2" => 1,
+          },
+          "favorite" => {
+            "P.0"=>0,
+            "P.1"=>0,
+            "P.2"=>0
           }
         }
       end
@@ -111,6 +121,11 @@ describe Scoring do
             "P.0" => 3,
             "P.1" => 3,
             "P.2" => 1,
+          },
+          "favorite" => {
+            "P.0"=>0,
+            "P.1"=>0,
+            "P.2"=>0
           }
         }
       end

@@ -50,6 +50,7 @@
   * for now Im just going to co-opt my ```adaptive-last`` algorithm, Later on I might try the "history matching" algorithm detailed on the website.
 
 #### iocaine powder part 2
+
 * Ok I now have a working version of my adaptive-last-predictor time to start working on iocaine itself
 
 * To start talking myself through this...
@@ -75,3 +76,19 @@
       round 1
       ```
   * the nested loops are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies
+  * so we are now generating a score hash, picking the top scoring combination from that hash and applying it to the current total game history to make a suggestion for the computer
+  *
+  * annnnnd...
+
+### WE HAVE A WORKING IOCAINE-POWDER!
+
+* I test drove it myself and its already pretty hard to go positive W/L against it. So COOL!
+*  I would have never thought this up in a million years, this Dan Egnor dude is a genius.
+
+* I don't think ill get to the  ```P'.0: second-guess the opponent``` and ```P'.1, P'.2: variations on a theme``` strategies. Im more interested in adding more prediction algorithms
+
+* Once I add more predictors it will be even more deadly so thats the next task
+
+#### Favorite predictor!
+
+* Currently alternating between only 2 moves is pretty strong against our iocaine so thats why I want to implement favorite first I think it will be an easy win

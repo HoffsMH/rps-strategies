@@ -7,7 +7,7 @@ require_relative "../../lib/predictions/adaptive_last_predictor"
 
 describe AdaptiveLastPredictor do
   context ".predict" do
-    context "when not given a game" do
+    context "when not given a history" do
       it "returns nil" do
         result = AdaptiveLastPredictor.predict(nil)
         expect(result).to be_nil
