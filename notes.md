@@ -92,3 +92,15 @@
 #### Favorite predictor!
 
 * Currently alternating between only 2 moves is pretty strong against our iocaine so thats why I want to implement favorite first I think it will be an easy win
+
+#### I have added more predictors
+* Now that I have a working History matcher its even harder to beat.
+* I have tests for my history matcher but after staring at the algorithm for a while I'm still having a hard time figuring out how to refactor it without losing any readability
+
+* If I wrap up all the variables that are at play inside the loop into a hash and give that hash as an argument to another method the conditional logic within that method ends up having so many brackets that its harder to read despite the fact that the main method and the extracted method are now shorter.
+
+* in any case Im still proud of the ```iocaine-powder``` strategy implementation despite it missing some of the meta-strategies and one of the prediction algorithms.
+
+* before I wrap it up Im going to add one simple ```random``` strategy
+
+* I would really really appreciate detailed code review on this. I am always looking to get better at the craft! Thanks!
