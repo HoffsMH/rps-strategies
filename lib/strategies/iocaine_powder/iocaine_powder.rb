@@ -1,11 +1,13 @@
 require_relative "../../predictions/adaptive_last_predictor"
+require_relative "../../predictions/favorite_predictor"
 require_relative "./scoring.rb"
 
 module IocainePowder
 
   def self.predictors
     {
-      "adaptive-last" => AdaptiveLastPredictor
+      "adaptive-last" => AdaptiveLastPredictor,
+      "favorite" => FavoritePredictor
     }
   end
 
