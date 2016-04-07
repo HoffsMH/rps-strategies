@@ -102,11 +102,13 @@ my data structure for scoring looks like this
 
   * So say I have round 1-4 in history with 4 being the latest round and 1 being the first round
     * The list of histories I want to submit to all of my predictors are:
+
       ```
       round 1-3
       round 1-2
       round 1
       ```
+      
   * the nested loops are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies.
 
   * so we are now generating a score hash, picking the top scoring combination from that hash and applying it to the current total game history to make a suggestion for the computer
