@@ -9,7 +9,7 @@ module AdaptiveLastPredictor
 
   def self.predict(history)
     return nil if !history
-    return "p" if history.empty?
+    return "r" if history.empty?
 
     last_score = history.last[:winner]
 

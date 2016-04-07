@@ -16,11 +16,11 @@ describe FavoritePredictor do
     context "when given an empty history" do
       # human opponents tend to choose rock as their opening move
       # http://www.livescience.com/15574-win-rock-paper-scissors.html
-      it "returns paper" do
+      it "returns 'r'" do
         game = Game.new
         result = FavoritePredictor.predict(game.history)
 
-        expect(result).to eq("p")
+        expect(result).to eq("r")
       end
     end
     context "when given a history" do

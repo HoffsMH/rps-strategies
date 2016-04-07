@@ -1,5 +1,6 @@
 require_relative "../../predictions/adaptive_last_predictor"
 require_relative "../../predictions/favorite_predictor"
+require_relative "../../predictions/history_matcher_predictor"
 require_relative "./scoring.rb"
 
 module IocainePowder
@@ -7,7 +8,8 @@ module IocainePowder
   def self.predictors
     {
       "adaptive-last" => AdaptiveLastPredictor,
-      "favorite" => FavoritePredictor
+      "favorite" => FavoritePredictor,
+      "history-matcher" => HistoryMatcherPredictor
     }
   end
 
@@ -52,6 +54,7 @@ module IocainePowder
     combination      = top_combinations.sample
     meta_strategy    = combination[:meta_strategy]
     predictor        = combination[:predictor]
+
     return meta_strategies[meta_strategy][predictors[predictor].predict(game.history)]
   end
 
