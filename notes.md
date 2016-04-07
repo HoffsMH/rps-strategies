@@ -62,7 +62,7 @@
 
   * the (prediction)-(strategy) combination with the highest score after iterating through every point in history is the winner and is what is suggested for the next move
 
-#### I can now get the top scoring combination from a score hash and generate an initial score hash!
+#### I can now generate an initial score hash and get the top scoring combination from a populated score hash!
 
 my data structure for scoring looks like this
 
