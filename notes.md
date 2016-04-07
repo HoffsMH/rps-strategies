@@ -135,7 +135,7 @@ my data structure for scoring looks like this
 * Now that I have a working History matcher its even harder to beat.
 * I have tests for my history matcher but after staring at the algorithm for a while I'm still having a hard time figuring out how to refactor it without losing any readability
 
-* If I wrap up all the variables that are at play inside the loop into a hash and give that hash as an argument to another method the conditional logic within that method ends up having so many brackets that its harder to read despite the fact that the main method and the extracted method are now shorter.
+* If I wrap up all the variables that are at play inside the loop into a hash and give that hash as an argument to another method, the conditional logic within that extracted method ends up having so many brackets that its harder to read despite the fact that the main method and the extracted method are now shorter.
 
 * in any case Im still proud of the ```iocaine-powder``` strategy implementation despite it missing some of the meta-strategies and one of the prediction algorithms.
 
