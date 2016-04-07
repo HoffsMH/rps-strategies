@@ -24,5 +24,5 @@ The instructions on how to operate are below.
   * [http://ofb.net/~egnor/iocaine.html](http://ofb.net/~egnor/iocaine.html) By Dan Egnor
   *  I don't plan to make a full implementation of it, for an explanation and to see how far I get please refer to the notes.
   * Positive W/L ratios past 200 rounds is difficult.
-  * I usually can't make it past 100 rounds before the strategy starts learning enough beat me consistently
-  * This will usually trounce human attempts at "random" within 200 moves
+  * I cannot routinely make it past 100 rounds before the strategy starts learning enough beat me consistently.
+  * This will usually trounce human attempts at "random" within 200 rounds.
