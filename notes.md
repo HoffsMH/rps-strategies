@@ -108,8 +108,8 @@ my data structure for scoring looks like this
       round 1-2
       round 1
       ```
-      
-  * the nested loops are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies.
+
+  * the nested loops needed are getting icky but I want to stick with this theme of keeping as much state as possible away from the strategies.
 
   * so we are now generating a score hash, picking the top scoring combination from that hash and applying it to the current total game history to make a suggestion for the computer
 
