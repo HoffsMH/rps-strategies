@@ -118,7 +118,7 @@ my data structure for scoring looks like this
 ### WE HAVE A WORKING IOCAINE-POWDER!
 
 * I test drove it myself and its already pretty hard to go positive W/L against it. So COOL!
-*  I would have never thought this up in a million years, this Dan Egnor dude is a genius.
+*  I would have never thought this up in a million years, Dan Egnor is a genius.
 
 * I don't think I'll get to the  ```P'.0: second-guess the opponent``` and ```P'.1, P'.2: variations on a theme``` strategies. Im more interested in adding more prediction algorithms
 
