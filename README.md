@@ -23,6 +23,6 @@ The instructions on how to operate are below.
   * This is a complicated strategy See details here
   * [http://ofb.net/~egnor/iocaine.html](http://ofb.net/~egnor/iocaine.html) By Dan Egnor
   *  I don't plan to make a full implementation of it, for an explanation and to see how far I get please refer to the notes.
-  * If you have a positive W/L ratio against this after 200 rounds, I'm impressed.
+  * Positive W/L ratios past 200 rounds is difficult.
   * I usually can't make it past 100 rounds before the strategy starts learning enough beat me consistently
-  * If you try to be "random" vs this you will get trounced
+  * This will usually trounce human attempts at "random" within 200 moves
