@@ -25,3 +25,4 @@ The instructions on how to operate are below.
   *  I don't plan to make a full implementation of it, for an explanation and to see how far I get please refer to the notes.
   * If you have a positive W/L ratio against this after 200 rounds, I'm impressed.
   * I usually can't make it past 100 rounds before the strategy starts learning enough beat me consistently
+  * If you try to be "random" vs this you will get trounced
