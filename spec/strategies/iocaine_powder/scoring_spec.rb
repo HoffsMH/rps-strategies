@@ -18,7 +18,12 @@ describe Scoring do
           "P.0"=>0,
           "P.1"=>0,
           "P.2"=>0
-        }
+        },
+         "history-matcher" =>{
+           "P.0"=>0,
+           "P.1"=>0,
+           "P.2"=>0
+         }
       }
       result = Scoring.get_initial_scores(
         IocainePowder.predictors,
@@ -105,7 +110,12 @@ describe Scoring do
             "P.0"=>0,
             "P.1"=>0,
             "P.2"=>0
-          }
+          },
+           "history-matcher" =>{
+             "P.0"=>0,
+             "P.1"=>0,
+             "P.2"=>0
+           }
         }
       end
       it "returns the top combination" do
@@ -126,7 +136,12 @@ describe Scoring do
             "P.0"=>0,
             "P.1"=>0,
             "P.2"=>0
-          }
+          },
+           "history-matcher" =>{
+             "P.0"=>0,
+             "P.1"=>0,
+             "P.2"=>0
+           }
         }
       end
       it "returns the top combination" do

@@ -30,7 +30,9 @@ describe IocainePowder do
         result = IocainePowder.collect_scores(game.history)
 
         expect(result).to eq({"adaptive-last"=>{"P.0"=>1, "P.1"=>0, "P.2"=>-1},
-                                                "favorite"=>{"P.0"=>-1, "P.1"=>1, "P.2"=>0}})
+                              "favorite"=>{"P.0"=>-1, "P.1"=>1, "P.2"=>0},
+                              "history-matcher"=>{"P.0"=>1, "P.1"=>0, "P.2"=>-1}
+                            })
       end
     end
     context "when given a game with a history of more rounds" do
@@ -43,7 +45,9 @@ describe IocainePowder do
         result = IocainePowder.collect_scores(game.history)
 
         expect(result).to eq({"adaptive-last"=>{"P.0"=>0, "P.1"=>-19, "P.2"=>19},
-                              "favorite"=>{"P.0"=>19, "P.1"=>0, "P.2"=>-19}})
+                              "favorite"=>{"P.0"=>19, "P.1"=>0, "P.2"=>-19},
+                              "history-matcher"=>{"P.0"=>18, "P.1"=>-1, "P.2"=>-17}
+                            })
       end
     end
   end

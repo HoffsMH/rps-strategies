@@ -18,7 +18,7 @@ module FavoritePredictor
 
   def self.predict(history)
     return nil if !history
-    return "p" if history.empty?
+    return "r" if history.empty?
 
     return get_max(get_counts(history))
   end
