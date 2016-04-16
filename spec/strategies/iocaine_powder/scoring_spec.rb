@@ -23,6 +23,11 @@ describe Scoring do
            "P.0"=>0,
            "P.1"=>0,
            "P.2"=>0
+         },
+         "history-matcher10" => {
+           "P.0"=>0,
+           "P.1"=>0,
+           "P.2"=>0
          }
       }
       result = Scoring.get_initial_scores(
