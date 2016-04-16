@@ -31,7 +31,8 @@ describe IocainePowder do
 
         expect(result).to eq({"adaptive-last"=>{"P.0"=>1, "P.1"=>0, "P.2"=>-1},
                               "favorite"=>{"P.0"=>-1, "P.1"=>1, "P.2"=>0},
-                              "history-matcher"=>{"P.0"=>1, "P.1"=>0, "P.2"=>-1}
+                              "history-matcher"=>{"P.0"=>1, "P.1"=>0, "P.2"=>-1},
+                              "history-matcher10"=>{"P.0"=>1, "P.1"=>0, "P.2"=>-1}
                             })
       end
     end
@@ -46,7 +47,8 @@ describe IocainePowder do
 
         expect(result).to eq({"adaptive-last"=>{"P.0"=>0, "P.1"=>-19, "P.2"=>19},
                               "favorite"=>{"P.0"=>19, "P.1"=>0, "P.2"=>-19},
-                              "history-matcher"=>{"P.0"=>18, "P.1"=>-1, "P.2"=>-17}
+                              "history-matcher"=>{"P.0"=>18, "P.1"=>-1, "P.2"=>-17},
+                              "history-matcher10"=>{"P.0"=>18, "P.1"=>-1, "P.2"=>-17}
                             })
       end
     end

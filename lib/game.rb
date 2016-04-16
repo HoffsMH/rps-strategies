@@ -1,4 +1,5 @@
 require 'colorize'
+
 class Game
   attr_accessor :history, :score
 
