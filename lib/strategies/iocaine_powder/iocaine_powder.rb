@@ -1,6 +1,7 @@
 require_relative "../../predictions/adaptive_last_predictor"
 require_relative "../../predictions/favorite_predictor"
 require_relative "../../predictions/history_matcher_predictor"
+require_relative "../../predictions/history_matcher_predictor-10"
 require_relative "./scoring.rb"
 
 module IocainePowder
@@ -9,7 +10,8 @@ module IocainePowder
     {
       "adaptive-last" => AdaptiveLastPredictor,
       "favorite" => FavoritePredictor,
-      "history-matcher" => HistoryMatcherPredictor
+      "history-matcher" => HistoryMatcherPredictor,
+      "history-matcher10" => HistoryMatcherPredictor10
     }
   end
 
